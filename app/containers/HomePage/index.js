@@ -10,16 +10,41 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import styled from 'styled-components';
+// import { FormattedMessage } from 'react-intl';
+// import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
-export default class HomePage extends React.PureComponent {
+export default class HomePage extends React.Component {
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <Form>
+        <Title>Input A Word:</Title>
+        <br />
+        <InputText type="text" placeholder="Please input a single word" />
+        <br />
+        <SubmitButton type="submit" value="Submit" />
+      </Form>
     );
   }
 }
+
+const Form = styled.div`
+  margin-left: 20px;
+`;
+
+const Title = styled.h2`
+  font-size: 1.5em;
+  color: palevioletred;
+`;
+
+const InputText = styled.input`
+  border: 1px solid;
+  width: 400px;
+  margin-bottom: 10px;
+`;
+
+const SubmitButton = styled.input`
+  background-color: grey;
+  color: white;
+`;
